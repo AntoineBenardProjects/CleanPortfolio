@@ -1,0 +1,62 @@
+<div class="pageContainer" [ngClass]="{'whiteBackground': changeBackgroundColor}">
+    <header class="whoami">
+        <div class="whoamiTop">
+            <img class="pageLogo" src="logo.png" alt="Logo Antoine Bénard">
+            <div class="name">
+                <h1>Antoine Bénard</h1>
+                <p>Ingénieur logiciel, spécialiste en scripts d’automatisations</p>
+            </div>
+        </div>
+        <div class="skills whiteTextBorder appearsAnimation">
+            <h2>Mes compétences</h2>
+            <p>Depuis 2021 j’utilise quotidiennement Typescript,  un langage de programmation dérivé du Javascript. 
+                Il permet de générer des programmes afin de générer des actions d’algorithmie. 
+                Couplé à d’autres outils et langages de programmations, il rend possible la réalisation de nombreuses tâches. 
+                Je me suis spécialisé dans le développement de deux d’entre elles.
+            </p>
+        </div>
+        <ul class="specializations">
+            <li class="smallPadding whiteBackgroundText specializationsTexts sideAppearsAnimation">
+                <h3>Développement logiciel</h3>
+                <p>Le développement logiciel comprend le développement d’applications mobiles, de sites et de logiciels.</p>
+            </li>
+            <li class="smallPadding whiteBackgroundText specializationsTexts sideAppearsAnimation">
+                <h3>Scripts d'automatisations</h3>
+                <p>Les scripts d’automatisations vont servir d’instructions à votre ordinateur pour effectuer des tâches automatiquement.</p>
+            </li>
+        </ul>
+    </header>
+    <section class="experienceTitleContainer" id="experienceTitle">
+        <div class="experienceTitle center">
+            <h2>Mes expériences</h2>
+        </div>
+        <div class="experiencesLabels" *ngIf="actualPercent">
+            <p class="center experienceLabel"
+            [ngClass]="{'hidden' : experience.title !== experienceTitleLabelShowed}"
+            *ngFor="let experience of experiences;index as i">{{experience.title}}</p>
+        </div>
+    </section>
+    <main class="experiencesContainer">
+        <div class="timeline"></div>
+        <ul class="experiences">
+            <li *ngFor="let experience of experiences; index as i;">
+                <app-experience
+                [title]="experience.title"
+                [year]="experience.year"
+                [role]="experience.role"
+                [url]="experience.url"
+                [description]="experience.description"
+                [isReverse]="i%2 === 0"></app-experience>
+            </li>
+        </ul>
+    </main>
+    <section class="experienceTitleContainer" id="billsTitle">
+        <h2 class="experienceTitle center">Prestations</h2>
+    </section>
+    <section class="bills">
+        <app-offers *ngFor="let offer of offers"
+        [title]="offer.title"
+        [offers]="offer.offers!"
+        [message]="offer.message"></app-offers>
+    </section>
+</div>
