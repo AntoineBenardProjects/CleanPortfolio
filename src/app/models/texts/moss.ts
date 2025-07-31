@@ -21,5 +21,5 @@ export const MossTexts: PageInfos = {
         }
     ],
     goals: ["Définition du besoin","Choix de librairie Angular","Démonstration (POC)"],
-    img: "moss.png"
+    img: "moss"
 }

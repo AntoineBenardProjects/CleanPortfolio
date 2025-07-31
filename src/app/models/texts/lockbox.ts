@@ -16,5 +16,5 @@ export const LockboxTexts: PageInfos = {
             technologies: ["React","NodeJS","Github"]
         }
     ],
-    img: "logo.png"
+    img: "logo"
 }

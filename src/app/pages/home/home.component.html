@@ -1,7 +1,10 @@
 <div class="pageContainer" [ngClass]="{'whiteBackground': changeBackgroundColor}">
     <header class="whoami">
         <div class="whoamiTop">
-            <img class="pageLogo" src="logo.png" alt="Logo Antoine Bénard">
+            <picture style="display: flex; justify-content: center;">
+                <source srcset="logo.webp" type="image/webp">
+                <img class="pageLogo" src="logo.png" alt="Logo Antoine Bénard">
+            </picture>
             <div class="name">
                 <h1>Antoine Bénard</h1>
                 <p>Ingénieur logiciel, spécialiste en scripts d’automatisations</p>
@@ -27,12 +30,9 @@
         </ul>
     </header>
     <section class="experienceTitleContainer" id="experienceTitle">
-        <div class="experienceTitle center">
-            <h2>Mes expériences</h2>
-        </div>
+        <h2 class="stickyTitle">Expériences</h2>
         <div class="experiencesLabels" *ngIf="actualPercent">
-            <p class="center experienceLabel"
-            [ngClass]="{'hidden' : experience.title !== experienceTitleLabelShowed}"
+            <p class="center experienceLabel" [ngStyle]="{'opacity': labelsOpacity[i]}"
             *ngFor="let experience of experiences;index as i">{{experience.title}}</p>
         </div>
     </section>
@@ -51,7 +51,7 @@
         </ul>
     </main>
     <section class="experienceTitleContainer" id="billsTitle">
-        <h2 class="experienceTitle center">Prestations</h2>
+        <h2 class="stickyTitle center">Prestations</h2>
     </section>
     <section class="bills">
         <app-offers *ngFor="let offer of offers"

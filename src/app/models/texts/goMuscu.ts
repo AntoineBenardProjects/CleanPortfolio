@@ -35,5 +35,5 @@ export const GoMuscuTexts: PageInfos = {
             technologies: ["Firebase"]
         }
     ],
-    img: "logo.png"
+    img: "logo"
 }

@@ -22,5 +22,5 @@ export const BelTexts: PageInfos = {
         }
     ],
     goals: ["Stabilisation","Optimisation","Évolution"],
-    img: "bel.png"
+    img: "bel"
 }

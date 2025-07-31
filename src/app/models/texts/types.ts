@@ -17,7 +17,7 @@ export interface PageInfos{
     steps: Step[],
     context: string,
     goals?: string[],
-    img: string
+    img: string,
 }
 
 export interface Experience{

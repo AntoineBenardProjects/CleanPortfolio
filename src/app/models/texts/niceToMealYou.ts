@@ -35,5 +35,5 @@ export const NiceToMealYouTexts: PageInfos = {
             technologies: ["Docker"]
         }
     ],
-    img: "NiceToMealYou.png"
+    img: "niceToMealYou"
 }

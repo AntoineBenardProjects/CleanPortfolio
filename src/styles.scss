@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Squada+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;700&family=Source+Code+Pro&display=swap');
 
 :root{
     --black: #140F22;
@@ -8,13 +8,14 @@
     --smallPadding: 2vw;
     --extraSmallPadding: 10px;
 
+    --widthWithPadding: calc(100% - 2*var(--padding));
+    --widthWithSmallPadding: calc(100% - 2*var(--smallPadding));
+
     --bigTitleFontSize: 4em;
     --titleFontSize: 2em;
     --subtitleFontSize: 1.5em;
     --classicFontSize: 1.25em;
     --smallFontSize: 1em;
-
-    --containerGap: 40vh;
 
     --titleFont: "Source Code Pro", monospace;
     --normalFont: 'Nunito', sans-serif;
@@ -30,19 +31,6 @@ h1,h2,h3,h4{
     font-family: var(--titleFont);
     margin: 0;
 }
-.center{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-ul,li{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-li{
-    display: flex;
-}
 h1{
     font-size: var(--bigTitleFontSize);
 }
@@ -54,17 +42,33 @@ h3,h4{
 }
 p{
     font-size: var(--classicFontSize);
+    font-weight: 200;
     margin: 0;
 }
+ul,li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li{
+    display: flex;
+}
+
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .pageContainer{
     display: flex;
     flex-direction: column;
-    width: calc(100% - 2 * var(--padding));
+    width: var(--widthWithPadding);
     background: var(--black);
     padding: var(--padding);
     color: var(--white);
     transition: .3s ease-out;
-    // overflow-x: hidden;
 }
 .whiteBackground{
     background: var(--white);
@@ -79,37 +83,45 @@ p{
 .small{
     font-size: var(--smallFontSize);
 }
+.buttonAnimation{
+    transition: .2s ease-out;
+    border-radius: var(--borderRadius);
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid;
+    font-weight: bold;
+}
+.buttonAnimation::before{
+    content: '';
+    width: 100%;
+    transform: translateX(-100%);
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: .2s ease-out;
+}
+.buttonAnimation:hover::before{
+    transform: translateX(0);
+}
 
 a{
+    @extend .buttonAnimation;
     position: relative;
     outline: none;
     text-decoration: none;
     padding: var(--smallPadding);
     font-size: var(--subtitleFontSize);
-    font-weight: bold;
-    border-radius: var(--borderRadius);
-    overflow: hidden;
-    cursor: pointer;
     background: transparent;
-    border: 2px solid;
-    transition: .2s ease-out;
 }
-button::before,a::before{
-    content: '';
-    width: 0;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    transition: .2s ease-out;
-}
-button:hover::before,a:hover::before{
+.buttonAnimation span{
+    display: block;
     width: 100%;
-}
-button span, a span{
     position: relative;
     z-index: 1;
+    text-align: center;
 }
+
 .blackButton{
     border-color: var(--black);
     color: var(--black);
@@ -141,6 +153,9 @@ button span, a span{
 }
 .smallPadding{
     padding: var(--smallPadding) !important;
+}
+.gapSmallPadding{
+    gap: var(--smallPadding) !important;
 }
 .blackTextBorder,.whiteTextBorder,.whiteBackgroundText,.blackBackgroundText,.textContainer{
     display: flex;
@@ -177,6 +192,15 @@ button span, a span{
     opacity: 0 !important;
     pointer-events: none;
 }
+.stickyTitle{
+    font-size: var(--bigTitleFontSize);
+    position: sticky;
+    text-align: center;
+    width: 100%;
+    top: calc(50% - var(--titleFontSize)/2);
+    transition: .3s ease-out;
+    z-index: 1;
+}
 
 @media screen and (max-width: 1000px) {
     :root{
@@ -189,7 +213,5 @@ button span, a span{
         --subtitleFontSize: 1.4em;
         --classicFontSize: 1.25em;
         --smallFontSize: 1em;
-
-        --containerGap: 20vh;
     }
 }

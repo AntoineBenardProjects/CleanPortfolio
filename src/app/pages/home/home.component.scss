@@ -44,22 +44,17 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    gap: var(--containerGap);
+    gap: 40vh;
     overflow: hidden;
 }
 .experienceTitleContainer{
     position: relative;
     height: 600vh;
+    padding: 50vh 0;
     transition: .3s ease-out;
 }
-.experienceTitle{
-    top: 0;
-    position: sticky;
-    height: 100vh;
-    z-index: 1;
-    h1{
-        background: var(--black);
-    }
+.stickyTitle h2{
+    font-size: var(--bigTitleFontSize);
 }
 .experiencesLabels{
     position: sticky;
@@ -73,7 +68,6 @@
     margin: auto;
     font-size: var(--subtitleFontSize);
     font-family: var(--titleFont);
-    transition: .3s ease-out;
 }
 app-experience{
     width: 100%;
@@ -95,7 +89,7 @@ app-experience{
     display: flex;
     flex-direction: column;
     gap: calc(2 * var(--padding));
-    width: calc(100% - 2 * var(--padding));
+    width: var(--widthWithPadding);
     padding: var(--padding);
 }
 #billsTitle{
@@ -120,7 +114,7 @@ app-experience{
     .skills{
         border: none;
         padding: 0;
-        width: calc(100% - 2*var(--padding));
+        width: var(--widthWithPadding);
     }
     .specializations{
         gap: var(--padding);
@@ -128,7 +122,7 @@ app-experience{
     .specializationsTexts{
         background: transparent !important;
         color: var(--white) !important;
-        width: calc(100% - 2*var(--smallPadding));
+        width: var(--widthWithSmallPadding);
         border-top: 2px solid var(--white);
         border-radius: 0;
     }

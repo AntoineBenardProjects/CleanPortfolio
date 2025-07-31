@@ -1,0 +1,17 @@
+{
+  "target": "antoinebenard-1",
+  "hosting": {
+    "public": "dist/clean-portfolio/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

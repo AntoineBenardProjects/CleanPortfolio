@@ -37,7 +37,7 @@ export const AirbusTexts: PageInfos = {
     actions: [
         {
             title: "Animation de réunions de bonnes pratiques",
-            details: "Animations de points hebdomadaires afin de mettre en place de bonnes pratiques de code ainsi que de rendre le code homogène.\nPour cela, j’ai d’abord sondé tous les membres de l’équipe front-end afin de cerner quelles étaient les problématiques importantes. Puis j’ai proposé au responsable technique d’animer des réunions de 45 minutes maximum où l’on pourrait évoquer les évoquer.",
+            details: "Animations de points hebdomadaires afin de mettre en place de bonnes pratiques de code ainsi que de rendre le code homogène.\nPour cela, j’ai d’abord sondé tous les membres de l’équipe front-end afin de cerner quelles étaient les problématiques importantes. Puis j’ai proposé au responsable technique d’animer des réunions de 45 minutes maximum où l’on pourrait les évoquer.",
             technologies: ["Powerpoint"]
         },
         {
@@ -70,25 +70,25 @@ export const AirbusTexts: PageInfos = {
         {
             title: "Augmentation de la productivité du front-end",
             details: "Le nombre de tickets traités par l’équipe front-end est drastiquement supérieur entre ma période d’activité et la période de 2022-2024.",
-            icon: "stonks.png"
+            icon: "stonks"
         },
         {
             title: "Gain de temps",
             details: "La fonctionnalité prise en charge a été en avance sur le planning.",
-            icon: "time.png"
+            icon: "time"
         },
         {
             title: "Moins d’anomalies créées",
             details: "La nouvelle fonctionnalité prise en charge a causé proportionnellement moins d’anomalies que les autres fonctions créées jusqu’alors.",
-            icon: "fall.png"
+            icon: "fall"
         },
         {
             title: "Réduction du nombre d’anomalies",
             details: "Le nombre d’anomalies total a diminué de 60%.",
-            icon: "clean.png"
+            icon: "clean"
         },
     ],
     context: "J’ai été déployé en mission chez Airbus par l’ESN SII dans un projet ambitieux de 60 personnes. L'équipe de développement où j'ai opéré est consitituée de 16 personnes. Le besoin front-end étant très important, j’ai surtout apporté mon expertise dans ce domaine.",
     goals: ["Stabilisation","Refonte","Évolution"],
-    img: "airbus.png"
+    img: "airbus",
 }

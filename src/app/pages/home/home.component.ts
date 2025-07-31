@@ -23,9 +23,10 @@ export class HomeComponent {
   public readonly experiences: Experience[] = HomeExperiences;
   public readonly offers: OffersInfos[] = HomeOffers;
 
-  public experienceTitleLabelShowed: string = "";
   public actualPercent: number = 0;
   public changeBackgroundColor: boolean = false;
+
+  public labelsOpacity: number[] = [];
 
   private scrollEventHandler: ((event: Event) => void) | undefined;
 
@@ -38,6 +39,7 @@ export class HomeComponent {
   ){}
 
   ngOnInit(): void{
+    this.labelsOpacity = Array(this.experiences.length).fill(0);
     this.titleService.setTitle("Antoine Bénard | Développeur web Angular | Automatisation Typescript");
     const description = "Ingénieur logiciel spécialisé dans l'automatisation, je développe des sites modernes et des scripts performants avec Angular et Typescript. Découvrez mes projets.";
     this.metaService.updateTag({ name: 'description', content: description });
@@ -78,23 +80,28 @@ export class HomeComponent {
     this.actualPercent = percent;
     const nbLabelsoShow: number = 6;
     const percentValueToChangeLabel: number = 100/(nbLabelsoShow+2);
-    if(percent < percentValueToChangeLabel){
-      this.experienceTitleLabelShowed = "";
-    } 
-    else{
-      this.experiences.forEach((experience,index) => {
-        const checkIfLabelMatchPercentScroll = percent < (index + 2) * percentValueToChangeLabel && percent > (index + 1) * percentValueToChangeLabel;
-        const checkIfLabelShowedChange = this.experienceTitleLabelShowed !== experience.title;
-        if(checkIfLabelShowedChange && checkIfLabelMatchPercentScroll){
-          this.experienceTitleLabelShowed = "";
-          setTimeout(() => {
-            if(this.actualPercent){
-              this.experienceTitleLabelShowed = experience.title;
-            }
-          },400);
+    this.experiences.forEach((experience,index) => {
+      const maxPercent: number = (index + 2)* percentValueToChangeLabel;
+      const minPercent: number = (index + 1)* percentValueToChangeLabel;
+      if(percent < minPercent || percent > maxPercent){
+        this.labelsOpacity[index] = 0;
+      } 
+      else{
+        const difference: number = maxPercent - minPercent;
+        const partMade: number = percent - minPercent;
+        const maxOpacity: number = difference/4;
+        const startFallOpacity: number = 3 * difference/4;
+        if(partMade > startFallOpacity){
+          const fallPartMade: number = percent - minPercent - startFallOpacity;
+          const opacity: number = 1 - fallPartMade/maxOpacity;
+          this.labelsOpacity[index] = opacity;
+        } 
+        else{
+          const opacity: number = partMade/maxOpacity;
+          this.labelsOpacity[index] = opacity;
         }
-      });
-    }
+      }
+    });
   }
 
   ngOnDestroy() {
