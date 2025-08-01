@@ -36,7 +36,6 @@
             ],
             "scripts": [],
             "server": "src/main.server.ts",
-            "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
             }
@@ -76,6 +75,26 @@
             }
           },
           "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@angular-devkit/build-angular:prerender",
+          "options": {
+            "browserTarget": "CleanPortfolio:build:production",
+            "serverTarget": "CleanPortfolio:server:production",
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "CleanPortfolio:build:production",
+              "serverTarget": "CleanPortfolio:server:production"
+            },
+            "development": {
+              "browserTarget": "CleanPortfolio:build:development",
+              "serverTarget": "CleanPortfolio:server:development"
+            }
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
