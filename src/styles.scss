@@ -15,6 +15,8 @@
     --classicFontSize: 1.25em;
     --smallFontSize: 1em;
 
+    --transition: .3s ease-out;
+
     --titleFont: "Source Code Pro", monospace;
     --normalFont: 'Nunito', sans-serif;
 
@@ -66,7 +68,7 @@ li{
     background: var(--black);
     padding: var(--padding);
     color: var(--white);
-    transition: .3s ease-out;
+    transition: var(--transition);
 }
 .whiteBackground{
     background: var(--white);
@@ -108,7 +110,7 @@ a{
     position: relative;
     outline: none;
     text-decoration: none;
-    padding: var(--smallPadding);
+    padding: var(--extraSmallPadding) var(--smallPadding);
     font-size: var(--subtitleFontSize);
     background: transparent;
 }
@@ -161,7 +163,7 @@ a{
     border-radius: var(--borderRadius);
     padding: var(--padding);
     gap: var(--smallPadding);
-    transition: .3s ease-out;
+    transition: var(--transition);
 }
 
 
@@ -181,23 +183,31 @@ a{
     transform: translateX(200px);
 }
 .sideAppearsAnimation{
-    transition: .3s ease-out;
+    transition: var(--transition);
 }
 .appearsAnimation{
-    transition: .3s ease-out;
+    transition: var(--transition);
 }
 .hidden{
     opacity: 0 !important;
     pointer-events: none;
 }
 .stickyTitle{
-    font-size: var(--bigTitleFontSize);
     position: sticky;
     text-align: center;
     width: 100%;
     top: calc(50% - var(--titleFontSize)/2);
-    transition: .3s ease-out;
+    transition: var(--transition);
     z-index: 1;
+}
+@media screen and (min-width: 1700px) {
+    :root{
+        --bigTitleFontSize: 5em;
+        --titleFontSize: 2.5em;
+        --subtitleFontSize: 2em;
+        --classicFontSize: 1.5em;
+        --smallFontSize: 1.2em;
+    }
 }
 
 @media screen and (max-width: 1000px) {

@@ -18,7 +18,14 @@
 
 
 .skills{
+    flex-direction: column;
+    gap: var(--smallPadding);
+    height: calc(100vh - 2 * var(--bigTitleFontSize) - 4* var(--padding));
+    padding-bottom: calc(2* var(--padding));
     width: min(70%,1000px);
+    h2{
+        width: 100%;
+    }
 }
 
 .specializations{
@@ -51,15 +58,37 @@
     position: relative;
     height: 600vh;
     padding: 50vh 0;
-    transition: .3s ease-out;
+    transition: var(--transition);
+}
+.stickyTitle{
+    top: calc(50% - var(--titleFontSize)/2 - 4 * var(--smallPadding));
+    flex-direction: column;
+    background: var(--black);
 }
 .stickyTitle h2{
     font-size: var(--bigTitleFontSize);
+    background: var(--black);
+    z-index: 1;
+    padding: var(--smallPadding);
+    border-radius: var(--borderRadius);
+}
+.experiencesPlacesImg{
+    position: absolute;
+    left: 0;
+    top: calc(max(-50vh, -500px) + 100%);
+    height: min(20vh,200px);
 }
 .experiencesLabels{
-    position: sticky;
-    top: calc(50% + var(--bigTitleFontSize));
+    position: relative;
     width: 100%;
+}
+.pictureTitleImg{
+    height: 100%;
+    transition: var(--transition);
+}
+.experienceImg{
+    height: 100%;
+    border-radius: var(--borderRadius);
 }
 .experienceLabel{
     position: absolute;
@@ -68,6 +97,11 @@
     margin: auto;
     font-size: var(--subtitleFontSize);
     font-family: var(--titleFont);
+    padding: var(--smallPadding);
+    border-radius: var(--borderRadius);
+    background: var(--black);
+    width: fit-content;
+    z-index: 1;
 }
 app-experience{
     width: 100%;

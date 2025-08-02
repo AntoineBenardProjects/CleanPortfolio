@@ -26,6 +26,7 @@ export interface Experience{
     role: string;
     description: string;
     url: string;
+    img: string;
 }
 
 export interface Offer{

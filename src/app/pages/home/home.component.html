@@ -1,4 +1,6 @@
-<div class="pageContainer" [ngClass]="{'whiteBackground': changeBackgroundColor}">
+<div class="pageContainer" [ngClass]="{
+    'whiteBackground': changeBackgroundColor,
+}">
     <header class="whoami">
         <div class="whoamiTop">
             <picture style="display: flex; justify-content: center;">
@@ -10,7 +12,7 @@
                 <p>Ingénieur logiciel, spécialiste en scripts d’automatisations</p>
             </div>
         </div>
-        <div class="skills whiteTextBorder appearsAnimation">
+        <div class="skills center appearsAnimation">
             <h2>Mes compétences</h2>
             <p>Depuis 2021 j’utilise quotidiennement Typescript,  un langage de programmation dérivé du Javascript. 
                 Il permet de générer des programmes afin de générer des actions d’algorithmie. 
@@ -19,21 +21,23 @@
             </p>
         </div>
         <ul class="specializations">
-            <li class="smallPadding whiteBackgroundText specializationsTexts sideAppearsAnimation">
+            <li class="smallPadding whiteTextBorder specializationsTexts sideAppearsAnimation">
                 <h3>Développement logiciel</h3>
                 <p>Le développement logiciel comprend le développement d’applications mobiles, de sites et de logiciels.</p>
             </li>
-            <li class="smallPadding whiteBackgroundText specializationsTexts sideAppearsAnimation">
+            <li class="smallPadding whiteTextBorder specializationsTexts sideAppearsAnimation">
                 <h3>Scripts d'automatisations</h3>
                 <p>Les scripts d’automatisations vont servir d’instructions à votre ordinateur pour effectuer des tâches automatiquement.</p>
             </li>
         </ul>
     </header>
     <section class="experienceTitleContainer" id="experienceTitle">
-        <h2 class="stickyTitle">Expériences</h2>
-        <div class="experiencesLabels" *ngIf="actualPercent">
-            <p class="center experienceLabel" [ngStyle]="{'opacity': labelsOpacity[i]}"
-            *ngFor="let experience of experiences;index as i">{{experience.title}}</p>
+        <div class="stickyTitle center">
+            <h2>Expériences</h2>
+            <div class="experiencesLabels">
+                <p class="center experienceLabel" [ngStyle]="{'opacity': labelsOpacity[i]}"
+                *ngFor="let experience of experiences;index as i">{{experience.title}}</p>
+            </div>
         </div>
     </section>
     <main class="experiencesContainer">

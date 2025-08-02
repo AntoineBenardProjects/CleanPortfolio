@@ -1,4 +1,4 @@
-import { Experience, Offer, OffersInfos } from "./types";
+import { Experience, OffersInfos } from "./types";
 
 export const HomeExperiences: Experience[] = [
     {
@@ -7,6 +7,7 @@ export const HomeExperiences: Experience[] = [
         role: "Fullstack, automatisation de rapports.",
         description: "Expertise apportée en front-end sur un projet de plus de 60 personnes.",
         url: "experiences/airbus",
+        img: "airbus"
     },
     {
         title: "GoMuscu",
@@ -14,6 +15,7 @@ export const HomeExperiences: Experience[] = [
         role: "Gestion de projet, design, front-end, back-end, déploiement.",
         description: "Création d’un site web responsive permettant de suivre ses dépenses caloriques et l’évolution de ses performances en musculation.",
         url: "projets/gomuscu",
+        img: "goMuscu"
     },
     {
         title: "NiceToMealYou",
@@ -21,6 +23,7 @@ export const HomeExperiences: Experience[] = [
         role: "Gestion de projet, design, scripting, fullstack, déploiement.",
         description: "Création d’un site web responsive permettant de trier et filtrer son carnet d’adresse par ville, arrondissement, ligne de transport en commun et bien d’autres critères.",
         url: "projets/nicetomealyou",
+        img: "niceToMealYou"
     },
     {
         title: "MOSS SAS",
@@ -28,13 +31,7 @@ export const HomeExperiences: Experience[] = [
         role: "Fullstack.",
         description: "Création une page sur leur site web interne où l’on pourrait générer les plannings afin de remplacer le logiciel utilisé.",
         url: "experiences/moss",
-    },
-    {
-        title: "Lockbox",
-        year: "2021",
-        role: "Fullstack.",
-        description: "Création d’un logiciel permettant d’alléger les files d’attentes devant les pharmacies lors des tests de dépistage du COVID-19.",
-        url: "projets/lockbox",
+        img: "moss"
     },
     {
         title: "Groupe Bel",
@@ -42,6 +39,7 @@ export const HomeExperiences: Experience[] = [
         role: "Fullstack.",
         description: "Aide au développement de leur portail web utilisé dans les usines de production pour visualiser les données des différents capteurs.",
         url: "experiences/bel",
+        img: "bel"
     }
 ] 
 

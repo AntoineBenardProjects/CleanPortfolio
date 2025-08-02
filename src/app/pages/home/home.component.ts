@@ -63,7 +63,7 @@ export class HomeComponent {
     this.animationsService.sideAppears();
     this.animationsService.appears();
     this.setShowExperienceTitleLabelAnimation();
-    this.setShowBillsTitleAnimation();
+    // this.setShowBillsTitleAnimation();
   }
 
   private setShowBillsTitleAnimation(): void{
@@ -102,6 +102,7 @@ export class HomeComponent {
         }
       }
     });
+    const isOneLabelShowed: boolean = this.labelsOpacity.find(opacity => opacity !== 0) != null;
   }
 
   ngOnDestroy() {
