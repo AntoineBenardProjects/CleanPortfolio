@@ -27,6 +27,6 @@ export class GoMuscuComponent {
     this.titleService.setTitle("Application GoMuscu | Développement front-end Angular | Déploiement Firebase");
     const description = "Projet GoMuscu : découvrez un site web responsive ergonomique développé sous Angular et Firebase.";
     this.metaService.updateTag({ name: 'description', content: description });
-    this.pageTitleService.setPageTitle("NiceToMealYou");
+    this.pageTitleService.setPageTitle("GoMuscu");
   }
 }

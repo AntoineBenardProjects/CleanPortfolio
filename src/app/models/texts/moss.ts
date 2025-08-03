@@ -12,7 +12,8 @@ export const MossTexts: PageInfos = {
         },
         {
             title: "Benchmark composant graphique",
-            details: "Recherche de librairie graphique Angular permettant de répondre au besoin. 4 composants ont été analysés."
+            details: "Recherche de librairie graphique Angular permettant de répondre au besoin. 4 composants ont été analysés.",
+            technologies: ["Angular","GitKraken"]
         },
         {
             title: "POC",
